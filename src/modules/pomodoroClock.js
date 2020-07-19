@@ -1,6 +1,6 @@
 import React from 'react';
-import '../modules/accurateInterval/index.js';
-import accurateInterval from 'accurateInterval';
+//import '../modules/accurateInterval/index.js';
+import accurateInterval from 'accurate-interval';
 
 class TimerLengthControl extends React.Component{
     render(){
@@ -71,18 +71,18 @@ class Timer extends React.Component{
 
     lengthControl (stateToChange,
         sign, currentLength, timerType){
-            if (this.state.timerState == 'runing') return;
-                if(this.state.timerType == timerType){
-                    if(sign == "-" && currentLength != 1){
+            if (this.state.timerState === 'runing') return;
+                if(this.state.timerType === timerType){
+                    if(sign === "-" && currentLength !== 1){
                         this.setState({[stateToChange]: currentLength -1});
-                    }else if (sign == "+" && currentLength != 60){
+                    }else if (sign === "+" && currentLength !== 60){
                         this.setState({[stateToChange]: currentLength + 1});
                     }
                 }else{
-                    if ( sign == "-" && currentLength != 1) {
+                    if ( sign === "-" && currentLength !== 1) {
                         this.setState({[stateToChange]: currentLength -1, 
                         timer: currentLength * 60 - 60});
-                    }else if(sign == "+" && currentLength != 60){
+                    }else if(sign === "+" && currentLength !== 60){
                         this.setState({[stateToChange]: currentLength + 1,
                         timer: currentLength * 60 + 60});
                     }
@@ -91,14 +91,15 @@ class Timer extends React.Component{
 
 
     timerControl() {
-        let control = this.state.timerState == 'stopped' ? (
+        let control = this.state.timerState === 'stopped' ? (
             this.beginCountDown(),
             this.setState({timerState:'runing'})
         ) : (
             this.setState({timerState: 'stopped'}),
             this.state.intervalID &&
-            this.state.intervalID.cancel()
+            this.state.intervalID.clear()
         );
+    
     }
 
 
@@ -113,7 +114,7 @@ class Timer extends React.Component{
 
     decrementTimer() {
         this.setState({
-            timer:this.setState.timer -1
+            timer:this.state.timer -1
         });
     }
 
@@ -124,27 +125,28 @@ class Timer extends React.Component{
     if (timer < 0) { 
         
         
-      this.state.timer == 'Session' ? 
-      ( this.state.intervalID && this.state.intervalID.cancel(),
+        this.state.timerType = "Session" ? 
+      ( this.state.intervalID && this.state.intervalID.clear(),
         this.beginCountDown(),
         this.switchTimer(this.state.brkLength * 60, 'Break')
       ) : (
-        this.state.intervalID && this.state.intervalID.cancel(),
+        this.state.intervalID && this.state.intervalID.clear(),
         this.beginCountDown(),
         this.switchTimer(this.state.seshLength * 60, 'Session')
        );
-    }  
+    }
   }
 
 
     warning(_timer) {
-        let warn = _timer < 61 ?
+        let warn=_timer < 61 ?
         this.setState({
             alarmColor:{color: '#a50d0d'}
         }) :
         this.setState({
             alarmColor:{color: 'white'}
         });
+        //return warn;
     }
 
     buzzer (_timer) {
@@ -179,8 +181,7 @@ class Timer extends React.Component{
             intervalID: '',
             alarmColor: {color: 'white'}
         });
-        this.state.intervalID &&
-        this.state.intervalID.cancel();
+        this.state.intervalID && this.state.intervalID.clear();
         this.audioBeep.pause();
         this.audioBeep.currentTime = 0;
     }

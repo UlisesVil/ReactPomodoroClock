@@ -1,3 +1,82 @@
-h1{
-    color: red;
+@font-face {
+    font-family: "Digital";
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+  }
+
+
+body{
+    background: #1E555C;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family:'Righteous';
+    #root{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+       // border: 2px solid red;
+        .main-title{
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .length-control{
+            width: 250px;
+        }
+        button{
+            background: none;
+            outline: none;
+            border: none;
+            color: rgb(253, 253, 253);
+            cursor: pointer;
+        }
+        .btn-level,.fa,
+        .length-control{
+            display: inline-block;
+           // border: 1px solid red;
+            font-size: 30px; 
+            .btn-level:nth-child(3){
+            width: 40px;
+               
+        }
+        }
+        .timer {
+            border:7px solid #13353a;
+            margin: 20px auto 10px auto;
+            width: 270;
+            height: 160px;
+            border-radius: 50px;
+            position: relative;
+            .timer-wrapper{
+                position: absolute;
+                width: 190px;
+                height: 110px;
+                left: 50%;
+                top: 50%;
+                margin-left: -95px;
+                margin-top: -57px;
+            }
+            #time-left{
+                font-family: 'digital';
+                font-size: 80px;
+            }
+            .timer-control button:active{
+                color: #13353a;
+            } 
+        }
+    }
 }
+
+
+
+
+@media screen and (max-width: 500px) {
+    #container {
+      transform: scale(0.8);
+      -webkit-transform: scale(0.8);
+      -moz-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+      -o-transform: scale(0.8);
+    }
+  } 
