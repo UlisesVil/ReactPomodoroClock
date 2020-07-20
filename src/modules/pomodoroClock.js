@@ -122,11 +122,15 @@ class Timer extends React.Component{
     let timer = this.state.timer;
     this.warning(timer);
     this.buzzer(timer);
+
+   
+//var "fixed" was added to fix the problem of "==" and send us the error
+//Expected an assignment or function call and instead saw an expression  no-unused-expressions in the compiler
+//and fixed the test 14/29 and 15/29 #Timer section FreecodeCamp test
+ 
     if (timer < 0) { 
-        
-        
-        this.state.timerType = "Session" ? 
-      ( this.state.intervalID && this.state.intervalID.clear(),
+       let fixit = this.state.timerType == 'Session' ? ( 
+        this.state.intervalID && this.state.intervalID.clear(),
         this.beginCountDown(),
         this.switchTimer(this.state.brkLength * 60, 'Break')
       ) : (
@@ -135,7 +139,7 @@ class Timer extends React.Component{
         this.switchTimer(this.state.seshLength * 60, 'Session')
        );
     }
-  }
+}
 
 
     warning(_timer) {
@@ -157,11 +161,11 @@ class Timer extends React.Component{
 
     switchTimer(num, str) {
         this.setState({
-            timer: num,
-            timerType: str,
-            alarmColor: {color: 'white'}
+          timer: num,
+          timerType: str,
+          alarmColor: {color: 'white'}
         })
-    }
+      }
 
     clockify() {
         let minutes = Math.floor(this.state.timer / 60);
@@ -246,9 +250,9 @@ class Timer extends React.Component{
             </div>
         )
     }
-}
+};
 
 
-
+//timer-label
 
 export default Timer;
