@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/ReactPomodoroClock/static/css/main.3f7b1043.chunk.css",
-    "main.js": "/ReactPomodoroClock/static/js/main.08b8788b.chunk.js",
-    "main.js.map": "/ReactPomodoroClock/static/js/main.08b8788b.chunk.js.map",
+    "main.css": "/ReactPomodoroClock/static/css/main.fe942c6e.chunk.css",
+    "main.js": "/ReactPomodoroClock/static/js/main.26ac3a73.chunk.js",
+    "main.js.map": "/ReactPomodoroClock/static/js/main.26ac3a73.chunk.js.map",
     "runtime-main.js": "/ReactPomodoroClock/static/js/runtime-main.8e576ed3.js",
     "runtime-main.js.map": "/ReactPomodoroClock/static/js/runtime-main.8e576ed3.js.map",
     "static/js/2.2671ed7b.chunk.js": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js",
     "static/js/2.2671ed7b.chunk.js.map": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.map",
     "index.html": "/ReactPomodoroClock/index.html",
-    "precache-manifest.be0a70471338cde2319cf3aec934acc1.js": "/ReactPomodoroClock/precache-manifest.be0a70471338cde2319cf3aec934acc1.js",
+    "precache-manifest.423ea63c0156bd08f7d6fdd2c6130010.js": "/ReactPomodoroClock/precache-manifest.423ea63c0156bd08f7d6fdd2c6130010.js",
     "service-worker.js": "/ReactPomodoroClock/service-worker.js",
-    "static/css/main.3f7b1043.chunk.css.map": "/ReactPomodoroClock/static/css/main.3f7b1043.chunk.css.map",
-    "static/js/2.2671ed7b.chunk.js.LICENSE.txt": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.LICENSE.txt"
+    "static/css/main.fe942c6e.chunk.css.map": "/ReactPomodoroClock/static/css/main.fe942c6e.chunk.css.map",
+    "static/js/2.2671ed7b.chunk.js.LICENSE.txt": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/ReactPomodoroClock/static/media/background01.9ecd526a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8e576ed3.js",
     "static/js/2.2671ed7b.chunk.js",
-    "static/css/main.3f7b1043.chunk.css",
-    "static/js/main.08b8788b.chunk.js"
+    "static/css/main.fe942c6e.chunk.css",
+    "static/js/main.26ac3a73.chunk.js"
   ]
 }

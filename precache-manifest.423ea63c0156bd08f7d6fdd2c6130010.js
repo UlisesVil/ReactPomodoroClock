@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "51a4597c8f926a9bce72d95ab9f9c222",
+    "revision": "25d4014688bdb0e1f6800a9d318d3be7",
     "url": "/ReactPomodoroClock/index.html"
   },
   {
-    "revision": "813fbba794fcc6bbd798",
-    "url": "/ReactPomodoroClock/static/css/main.3f7b1043.chunk.css"
+    "revision": "254be11614d03fd69886",
+    "url": "/ReactPomodoroClock/static/css/main.fe942c6e.chunk.css"
   },
   {
     "revision": "5df45986008189a7569a",
@@ -16,11 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "813fbba794fcc6bbd798",
-    "url": "/ReactPomodoroClock/static/js/main.08b8788b.chunk.js"
+    "revision": "254be11614d03fd69886",
+    "url": "/ReactPomodoroClock/static/js/main.26ac3a73.chunk.js"
   },
   {
     "revision": "61d15266adf662923807",
     "url": "/ReactPomodoroClock/static/js/runtime-main.8e576ed3.js"
+  },
+  {
+    "revision": "9ecd526a5f47bea14b70812b94db9e96",
+    "url": "/ReactPomodoroClock/static/media/background01.9ecd526a.png"
   }
 ]);
