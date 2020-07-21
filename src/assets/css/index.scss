@@ -1,28 +1,33 @@
-@font-face {
-    font-family: "Digital";
-    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
-    src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
-  }
-
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body{
-    background: #1E555C;
-    color: white;
+    background: #000000e3;
+    color: rgb(255, 255, 255);
     font-size: 30px;
     text-align: center;
-    font-family:'Righteous';
+    font-family: 'Share Tech Mono', monospace;
+    
     #root{
         display: flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
-       // border: 2px solid red;
+        //border: 2px solid red;
+        
         .main-title{
-            font-size: 50px;
-            margin-bottom: 20px;
+            margin-top: 150px;
+            margin-bottom: 130px;
+            font-size: 70px;
+            
+        }
+        @media screen and (max-width: 556px) {
+            .main-title{
+                margin-top: 150px;
+                margin-bottom: 15px;
+            }
         }
         .length-control{
-            width: 250px;
+            width: 200px;
         }
         button{
             background: none;
@@ -31,18 +36,15 @@ body{
             color: rgb(253, 253, 253);
             cursor: pointer;
         }
-        .btn-level,.fa,
+        .btn-level,.fa,.fas,
         .length-control{
             display: inline-block;
-           // border: 1px solid red;
-            font-size: 30px; 
+            font-size: 20px; 
             .btn-level:nth-child(3){
             width: 40px;
-               
-        }
+            }
         }
         .timer {
-            border:7px solid #13353a;
             margin: 20px auto 10px auto;
             width: 270;
             height: 160px;
@@ -58,7 +60,7 @@ body{
                 margin-top: -57px;
             }
             #time-left{
-                font-family: 'digital';
+                font-family: 'Share Tech Mono', monospace;
                 font-size: 80px;
             }
             .timer-control button:active{
@@ -68,15 +70,55 @@ body{
     }
 }
 
+#content{
+    background-image: url(../images/background01.png);
+    background-size: cover;
+    background-position: center;
+    width: 600px;
+    height: 760px;
+    box-shadow: 0px 0px 40px red;
+    border-radius: 10px;
+}
+
+#controls{
+    width: 100%;
+    height: 85px;
+}
+
+.controlLeft{
+    float:left;
+}
+
+.controlRight{
+    display: flex;
+    float: right;
+    margin-right: 0px;
+}
+
+.fas:hover, .far:hover{
+    color: red;
+    text-shadow: 0px 0px 20px red;
+}
+
+.fas:active, .far:active{
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 0px red;
+}
 
 
-
-@media screen and (max-width: 500px) {
-    #container {
-      transform: scale(0.8);
-      -webkit-transform: scale(0.8);
-      -moz-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-      -o-transform: scale(0.8);
+@media screen and (max-width: 556px) {
+    
+    .main-title{
+        margin-top: 150px;
+        margin-bottom: 100px;
     }
-  } 
+
+    .fas:hover, .far:hover{
+        color: red;
+        text-shadow: 0px 0px 20px red;
+    }
+    .fas:active, .far:active{
+        color: rgb(0, 0, 0);
+        text-shadow: 0px 0px 0px red;
+    }
+} 

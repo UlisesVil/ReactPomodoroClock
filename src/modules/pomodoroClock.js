@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../modules/accurateInterval/index.js';
 import accurateInterval from 'accurate-interval';
 
 class TimerLengthControl extends React.Component{
@@ -13,7 +12,7 @@ class TimerLengthControl extends React.Component{
                         className="btn-level"
                         value="-"
                         onClick={this.props.onClick}>
-                    <i className="fa fa-arrow-down fa-2x" />                        
+                    <i className="fas fa-angle-double-down" />                        
                 </button>
                 <div id={this.props.lengthID}
                      className="btn-level">
@@ -23,13 +22,12 @@ class TimerLengthControl extends React.Component{
                         className="btn-level"
                         value="+"
                         onClick={this.props.onClick}>
-                    <i className="fa fa-arrow-up fa-2x" />
+                    <i className="fas fa-angle-double-up" />
                 </button>
             </div>
         )
     }
 };
-
 
 class Timer extends React.Component{
     constructor(props){
@@ -192,32 +190,38 @@ class Timer extends React.Component{
 
 
     render(){
+       
         return(
-            <div>
+            <div id="content">
                 <div className = "main-title">
                     Pomodoro Clock
                 </div>
 
-                <TimerLengthControl
-                    titleID= "break-label"
-                    minID = "break-decrement"
-                    addID = "break-increment"
-                    lengthID = "break-length"
-                    title = "Break Length"
-                    onClick = {this.setBrkLength}
-                    length = {this.state.brkLength}
-                />
+                <div id="controls">
+                    <div className="controlLeft">
+                    <TimerLengthControl
+                        titleID= "break-label"
+                        minID = "break-decrement"
+                        addID = "break-increment"
+                        lengthID = "break-length"
+                        title = "Break Length"
+                        onClick = {this.setBrkLength}
+                        length = {this.state.brkLength}
+                    />
+                    </div>
 
-                <TimerLengthControl 
-                    titleID = "session-label"
-                    minID = "session-decrement"
-                    addID = "session-increment"
-                    lengthID = "session-length"
-                    title = "Session Length"
-                    onClick = {this.setSeshLength}
-                    length = {this.state.seshLength}
-                />
-
+                    <div className="controlRight">
+                    <TimerLengthControl 
+                        titleID = "session-label"
+                        minID = "session-decrement"
+                        addID = "session-increment"
+                        lengthID = "session-length"
+                        title = "Session Length"
+                        onClick = {this.setSeshLength}
+                        length = {this.state.seshLength}
+                    />
+                    </div>
+                </div>
                 <div className = "timer"
                      style = {this.state.alarmColor}>
                     <div className = "timer-wrapper">
@@ -232,12 +236,12 @@ class Timer extends React.Component{
                 <div className= "timer-control">
                     <button id= "start_stop"
                             onClick={this.timerControl}>
-                            <i className = "fa fa-play fa-2x"/>
-                            <i className = "fa fa-pause fa-2x"/>    
+                            <i className = "far fa-play-circle"/>
+                            <i className = "far fa-pause-circle"/>    
                     </button>
                     <button id = "reset"
                             onClick = {this.reset}>
-                        <i className = "fa fa-refresh fa-2x"/>
+                        <i className = "fas fa-history" />
                     </button>
                 </div>
                 <audio id = "beep"
@@ -251,8 +255,5 @@ class Timer extends React.Component{
         )
     }
 };
-
-
-//timer-label
 
 export default Timer;
