@@ -67,26 +67,24 @@ class Timer extends React.Component{
         this.state.seshLength, 'Break');
     }
 
-    lengthControl (stateToChange,
-        sign, currentLength, timerType){
-            if (this.state.timerState === 'runing') return;
-                if(this.state.timerType === timerType){
-                    if(sign === "-" && currentLength !== 1){
-                        this.setState({[stateToChange]: currentLength -1});
-                    }else if (sign === "+" && currentLength !== 60){
-                        this.setState({[stateToChange]: currentLength + 1});
-                    }
-                }else{
-                    if ( sign === "-" && currentLength !== 1) {
-                        this.setState({[stateToChange]: currentLength -1, 
-                        timer: currentLength * 60 - 60});
-                    }else if(sign === "+" && currentLength !== 60){
-                        this.setState({[stateToChange]: currentLength + 1,
-                        timer: currentLength * 60 + 60});
-                    }
-                }
+    lengthControl (stateToChange, sign, currentLength, timerType){
+        if (this.state.timerState === 'runing') return;
+        if(this.state.timerType === timerType){
+            if(sign === "-" && currentLength !== 1){
+                this.setState({[stateToChange]: currentLength -1});
+            }else if (sign === "+" && currentLength !== 60){
+                this.setState({[stateToChange]: currentLength + 1});
+            }
+        }else{
+            if ( sign === "-" && currentLength !== 1) {
+                this.setState({[stateToChange]: currentLength -1, 
+                timer: currentLength * 60 - 60});
+            }else if(sign === "+" && currentLength !== 60){
+                this.setState({[stateToChange]: currentLength + 1,
+                timer: currentLength * 60 + 60});
+            }
+        }
     }
-
 
     timerControl() {
         let control = this.state.timerState === 'stopped' ? (
@@ -97,9 +95,7 @@ class Timer extends React.Component{
             this.state.intervalID &&
             this.state.intervalID.clear()
         );
-    
     }
-
 
     beginCountDown() {
         this.setState({
@@ -117,27 +113,26 @@ class Timer extends React.Component{
     }
 
     phaseControl() {
-    let timer = this.state.timer;
-    this.warning(timer);
-    this.buzzer(timer);
-
-   
-//var "fixed" was added to fix the problem of "==" and send us the error
-//Expected an assignment or function call and instead saw an expression  no-unused-expressions in the compiler
-//and fixed the test 14/29 and 15/29 #Timer section FreecodeCamp test
- 
-    if (timer < 0) { 
-       let fixit = this.state.timerType == 'Session' ? ( 
-        this.state.intervalID && this.state.intervalID.clear(),
-        this.beginCountDown(),
-        this.switchTimer(this.state.brkLength * 60, 'Break')
-      ) : (
-        this.state.intervalID && this.state.intervalID.clear(),
-        this.beginCountDown(),
-        this.switchTimer(this.state.seshLength * 60, 'Session')
-       );
+        let timer = this.state.timer;
+        this.warning(timer);
+        this.buzzer(timer);
+    
+        //variables "fixit and warn" was added to fix the problem of "==" and send us the error
+        //Expected an assignment or function call and instead saw an expression  no-unused-expressions in the compiler
+        //and fixed the test 14/29 and 15/29 #Timer section FreecodeCamp test
+    
+        if (timer < 0) { 
+        let fixit = this.state.timerType == 'Session' ? ( 
+            this.state.intervalID && this.state.intervalID.clear(),
+            this.beginCountDown(),
+            this.switchTimer(this.state.brkLength * 60, 'Break')
+        ) : (
+            this.state.intervalID && this.state.intervalID.clear(),
+            this.beginCountDown(),
+            this.switchTimer(this.state.seshLength * 60, 'Session')
+        );
+        }
     }
-}
 
 
     warning(_timer) {
@@ -148,7 +143,6 @@ class Timer extends React.Component{
         this.setState({
             alarmColor:{color: 'white'}
         });
-        //return warn;
     }
 
     buzzer (_timer) {
@@ -163,7 +157,7 @@ class Timer extends React.Component{
           timerType: str,
           alarmColor: {color: 'white'}
         })
-      }
+    }
 
     clockify() {
         let minutes = Math.floor(this.state.timer / 60);
@@ -199,31 +193,30 @@ class Timer extends React.Component{
 
                 <div id="controls">
                     <div className="controlLeft">
-                    <TimerLengthControl
-                        titleID= "break-label"
-                        minID = "break-decrement"
-                        addID = "break-increment"
-                        lengthID = "break-length"
-                        title = "Break Length"
-                        onClick = {this.setBrkLength}
-                        length = {this.state.brkLength}
-                    />
+                        <TimerLengthControl
+                            titleID= "break-label"
+                            minID = "break-decrement"
+                            addID = "break-increment"
+                            lengthID = "break-length"
+                            title = "Break Length"
+                            onClick = {this.setBrkLength}
+                            length = {this.state.brkLength}
+                        />
                     </div>
 
                     <div className="controlRight">
-                    <TimerLengthControl 
-                        titleID = "session-label"
-                        minID = "session-decrement"
-                        addID = "session-increment"
-                        lengthID = "session-length"
-                        title = "Session Length"
-                        onClick = {this.setSeshLength}
-                        length = {this.state.seshLength}
-                    />
+                        <TimerLengthControl 
+                            titleID = "session-label"
+                            minID = "session-decrement"
+                            addID = "session-increment"
+                            lengthID = "session-length"
+                            title = "Session Length"
+                            onClick = {this.setSeshLength}
+                            length = {this.state.seshLength}
+                        />
                     </div>
                 </div>
-                <div className = "timer"
-                     style = {this.state.alarmColor}>
+                <div className = "timer" style = {this.state.alarmColor}>
                     <div className = "timer-wrapper">
                         <div id="timer-label">
                             {this.state.timerType}
@@ -234,22 +227,18 @@ class Timer extends React.Component{
                     </div>    
                 </div>
                 <div className= "timer-control">
-                    <button id= "start_stop"
-                            onClick={this.timerControl}>
-                            <i className = "far fa-play-circle"/>
-                            <i className = "far fa-pause-circle"/>    
+                    <button id= "start_stop" onClick={this.timerControl}>
+                        <i className = "far fa-play-circle"/>
+                        <i className = "far fa-pause-circle"/>    
                     </button>
-                    <button id = "reset"
-                            onClick = {this.reset}>
+                    <button id = "reset" onClick = {this.reset}>
                         <i className = "fas fa-history" />
                     </button>
                 </div>
-                <audio id = "beep"
-                        preload = "auto"
-                        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
-                        ref={(audio)=>{
-                            this.audioBeep = audio;
-                        }}
+                <audio id="beep"
+                    preload = "auto"
+                    src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+                    ref={(audio)=>{this.audioBeep = audio;}}
                 />
             </div>
         )

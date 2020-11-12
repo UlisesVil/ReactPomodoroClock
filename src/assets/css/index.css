@@ -24,6 +24,7 @@ body #root .main-title {
   margin-top: 150px;
   margin-bottom: 130px;
   font-size: 70px;
+  text-shadow: 5px 5px 10px white;
 }
 
 @media screen and (max-width: 556px) {
@@ -122,9 +123,12 @@ body #root .timer .timer-control button:active {
 }
 
 @media screen and (max-width: 556px) {
-  .main-title {
-    margin-top: 150px;
-    margin-bottom: 100px;
+  #content {
+    width: 400px;
+    height: 760px;
+    -webkit-box-shadow: 0px 0px 40px red;
+            box-shadow: 0px 0px 40px red;
+    border-radius: 10px;
   }
   .fas:hover, .far:hover {
     color: red;
@@ -133,6 +137,9 @@ body #root .timer .timer-control button:active {
   .fas:active, .far:active {
     color: black;
     text-shadow: 0px 0px 0px red;
+  }
+  .timer-control {
+    margin-top: -11px;
   }
 }
 /*# sourceMappingURL=index.css.map */
