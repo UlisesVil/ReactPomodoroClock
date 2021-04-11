@@ -97,7 +97,7 @@ body #root .timer .timer-control button:active {
   -webkit-box-shadow: 0px 0px 40px red;
           box-shadow: 0px 0px 40px red;
   border-radius: 10px;
-  background-image: url(../images/background02.jpg);
+  background-image: url(../images/background02.png);
   background-size: cover;
   background-position: center;
 }
