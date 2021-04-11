@@ -16,7 +16,7 @@ class TimerLengthControl extends React.Component{
                 </button>
                 <div id={this.props.lengthID}
                      className="btn-level">
-                         {this.props.length}
+                        {this.props.length}
                 </div>
                 <button id={this.props.addID}
                         className="btn-level"
@@ -39,7 +39,7 @@ class Timer extends React.Component{
             timerType: 'Session',
             timer: 1500,
             intervalID: '',
-            alarmColor: {color:'white'}  
+            alarmColor: {color:'yellowgreen'}  
         }
 
         this.setBrkLength = this.setBrkLength.bind(this);
@@ -58,13 +58,15 @@ class Timer extends React.Component{
 
     setBrkLength(e) {
         this.lengthControl('brkLength', e.currentTarget.value,
-            this.state.brkLength, 'Session');
+            this.state.brkLength, 'Session'
+        );
     }
 
     setSeshLength(e) {
         this.lengthControl('seshLength',
-        e.currentTarget.value,
-        this.state.seshLength, 'Break');
+            e.currentTarget.value,
+            this.state.seshLength, 'Break'
+        );
     }
 
     lengthControl (stateToChange, sign, currentLength, timerType){
@@ -116,21 +118,16 @@ class Timer extends React.Component{
         let timer = this.state.timer;
         this.warning(timer);
         this.buzzer(timer);
-    
-        //variables "fixit and warn" was added to fix the problem of "==" and send us the error
-        //Expected an assignment or function call and instead saw an expression  no-unused-expressions in the compiler
-        //and fixed the test 14/29 and 15/29 #Timer section FreecodeCamp test
-    
         if (timer < 0) { 
-        let fixit = this.state.timerType == 'Session' ? ( 
-            this.state.intervalID && this.state.intervalID.clear(),
-            this.beginCountDown(),
-            this.switchTimer(this.state.brkLength * 60, 'Break')
-        ) : (
-            this.state.intervalID && this.state.intervalID.clear(),
-            this.beginCountDown(),
-            this.switchTimer(this.state.seshLength * 60, 'Session')
-        );
+            let fixit = this.state.timerType == 'Session' ? ( 
+                this.state.intervalID && this.state.intervalID.clear(),
+                this.beginCountDown(),
+                this.switchTimer(this.state.brkLength * 60, 'Break')
+                ) : (
+                this.state.intervalID && this.state.intervalID.clear(),
+                this.beginCountDown(),
+                this.switchTimer(this.state.seshLength * 60, 'Session')
+            );
         }
     }
 
@@ -153,9 +150,9 @@ class Timer extends React.Component{
 
     switchTimer(num, str) {
         this.setState({
-          timer: num,
-          timerType: str,
-          alarmColor: {color: 'white'}
+            timer: num,
+            timerType: str,
+            alarmColor: {color: 'white'}
         })
     }
 
@@ -182,13 +179,12 @@ class Timer extends React.Component{
         this.audioBeep.currentTime = 0;
     }
 
-
     render(){
-       
         return(
             <div id="content">
                 <div className = "main-title">
-                    Pomodoro Clock
+                    <p>Pomodoro</p>
+                    <p>Clock</p>
                 </div>
 
                 <div id="controls">

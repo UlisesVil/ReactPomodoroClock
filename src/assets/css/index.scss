@@ -1,55 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body{
-    background: #000000e3;
-    color: rgb(255, 255, 255);
+    background: url(../images/back10.jpg);
+    color: rgb(50, 252, 0);
     font-size: 30px;
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     
     #root{
         display: flex;
         height: 100vh;
         justify-content: center;
         align-items: center;
-        //border: 2px solid red;
         
         .main-title{
             margin-top: 150px;
-            margin-bottom: 130px;
+            margin-bottom: 95px;
             font-size: 70px;
-            text-shadow: 5px 5px 10px white;
+            text-shadow: 5px 5px 10px rgb(65, 65, 65);
         }
+
+        p{
+            line-height: 50px;
+        }
+
         @media screen and (max-width: 556px) {
             .main-title{
                 margin-top: 150px;
-                margin-bottom: 15px;
             }
         }
+       
         .length-control{
             width: 200px;
         }
+
         button{
             background: none;
             outline: none;
             border: none;
-            color: rgb(253, 253, 253);
+            color: rgb(129, 0, 214);
             cursor: pointer;
         }
         .btn-level,.fa,.fas,
         .length-control{
             display: inline-block;
-            font-size: 20px; 
+            font-size: 20px;
+
             .btn-level:nth-child(3){
-            width: 40px;
+                width: 40px;
             }
         }
         .timer {
-            margin: 20px auto 10px auto;
+            position: relative;
             width: 270;
             height: 160px;
             border-radius: 50px;
-            position: relative;
+            margin: 20px auto 10px auto;
             .timer-wrapper{
                 position: absolute;
                 width: 190px;
@@ -71,13 +81,13 @@ body{
 }
 
 #content{
-    background-image: url(../images/background01.png);
-    background-size: cover;
-    background-position: center;
     width: 600px;
     height: 760px;
     box-shadow: 0px 0px 40px red;
     border-radius: 10px;
+    background-image: url(../images/background02.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #controls{
@@ -105,6 +115,34 @@ body{
     text-shadow: 0px 0px 0px red;
 }
 
+/*ScrollBar*/
+::-webkit-scrollbar-corner {
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: #2c2b2b;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: #990202;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    background: red;
+    border-radius: 20px;
+}
+
 @media screen and (max-width: 556px) {
 
     #content{
@@ -118,6 +156,7 @@ body{
         color: red;
         text-shadow: 0px 0px 20px red;
     }
+
     .fas:active, .far:active{
         color: rgb(0, 0, 0);
         text-shadow: 0px 0px 0px red;
@@ -126,4 +165,51 @@ body{
     .timer-control{
         margin-top: -11px;
     }
+
+    #session-label{
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+
+    #break-label{
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+
+    .length-control{
+        width: fit-content !important;
+    }
+
+    .controlRight{
+        width: 120px;
+        margin-right: 30px;
+    }
+
+    .controlLeft{
+        width: 120px;
+        margin-left: 30px;
+    }
 } 
+
+@media screen and (max-width: 300px) {
+
+    .main-title{
+        font-size: 50px !important;
+        margin-top: 200px !important;
+        margin-bottom: 80px !important;
+    }
+
+    .controlRight{
+        margin-right: 10px;
+    }
+
+    .controlLeft{
+        margin-left: 10px;
+    }
+    
+    #controls{
+        height: 40px;
+    }
+}
