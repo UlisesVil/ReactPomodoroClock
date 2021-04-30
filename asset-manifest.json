@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ReactPomodoroClock/static/css/main.9047f533.chunk.css",
-    "main.js": "/ReactPomodoroClock/static/js/main.25897682.chunk.js",
-    "main.js.map": "/ReactPomodoroClock/static/js/main.25897682.chunk.js.map",
+    "main.css": "/ReactPomodoroClock/static/css/main.47202ae6.chunk.css",
+    "main.js": "/ReactPomodoroClock/static/js/main.ab96bbbc.chunk.js",
+    "main.js.map": "/ReactPomodoroClock/static/js/main.ab96bbbc.chunk.js.map",
     "runtime-main.js": "/ReactPomodoroClock/static/js/runtime-main.8e576ed3.js",
     "runtime-main.js.map": "/ReactPomodoroClock/static/js/runtime-main.8e576ed3.js.map",
     "static/js/2.2671ed7b.chunk.js": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js",
     "static/js/2.2671ed7b.chunk.js.map": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.map",
     "index.html": "/ReactPomodoroClock/index.html",
-    "precache-manifest.c030aa6490b662bcb6072efd5858c47f.js": "/ReactPomodoroClock/precache-manifest.c030aa6490b662bcb6072efd5858c47f.js",
+    "precache-manifest.b549f28919c106dd9c5f27e5f4a5b816.js": "/ReactPomodoroClock/precache-manifest.b549f28919c106dd9c5f27e5f4a5b816.js",
     "service-worker.js": "/ReactPomodoroClock/service-worker.js",
-    "static/css/main.9047f533.chunk.css.map": "/ReactPomodoroClock/static/css/main.9047f533.chunk.css.map",
+    "static/css/main.47202ae6.chunk.css.map": "/ReactPomodoroClock/static/css/main.47202ae6.chunk.css.map",
     "static/js/2.2671ed7b.chunk.js.LICENSE.txt": "/ReactPomodoroClock/static/js/2.2671ed7b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/ReactPomodoroClock/static/media/background02.fa97fea2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8e576ed3.js",
     "static/js/2.2671ed7b.chunk.js",
-    "static/css/main.9047f533.chunk.css",
-    "static/js/main.25897682.chunk.js"
+    "static/css/main.47202ae6.chunk.css",
+    "static/js/main.ab96bbbc.chunk.js"
   ]
 }
