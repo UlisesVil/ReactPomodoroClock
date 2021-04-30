@@ -61,13 +61,9 @@ body{
             border-radius: 50px;
             margin: 20px auto 10px auto;
             .timer-wrapper{
-                position: absolute;
-                width: 190px;
-                height: 110px;
-                left: 50%;
-                top: 50%;
-                margin-left: -95px;
-                margin-top: -57px;
+                width: fit-content;
+                height: fit-content;
+                margin: 0 auto;
             }
             #time-left{
                 font-family: 'Share Tech Mono', monospace;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
-import Timer from './modules/pomodoroClock';
+import Timer from './modules/pomodoroTimer';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

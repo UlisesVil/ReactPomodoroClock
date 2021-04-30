@@ -73,13 +73,13 @@ body #root .timer {
 }
 
 body #root .timer .timer-wrapper {
-  position: absolute;
-  width: 190px;
-  height: 110px;
-  left: 50%;
-  top: 50%;
-  margin-left: -95px;
-  margin-top: -57px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 auto;
 }
 
 body #root .timer #time-left {

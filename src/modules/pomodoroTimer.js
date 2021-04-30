@@ -184,7 +184,7 @@ class Timer extends React.Component{
             <div id="content">
                 <div className = "main-title">
                     <p>Pomodoro</p>
-                    <p>Clock</p>
+                    <p>Timer</p>
                 </div>
 
                 <div id="controls">
